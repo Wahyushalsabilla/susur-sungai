@@ -76,7 +76,7 @@ const i18nData = {
     sec5_rule: "<strong>Bawa kembali sampahmu</strong> dan jangan meninggalkan barang di sepanjang jalur maupun area sungai.",
 
     // SECTION 06 — CHECKLIST
-    sec6_tag: "06 — Checklist Sebelum Berangkat",
+    sec6_tag: "Checklist Sebelum Berangkat",
     sec6_title: "Sudah siap?",
     sec6_sub: "Centang setiap item langsung di perangkatmu sebelum tim memulai perjalanan:",
     btn_reset: "Reset",
@@ -96,7 +96,7 @@ const i18nData = {
     sticky_done: "Semua siap! Siap jalan 🌿"
   },
   en: {
-    nav_checklist: "Readiness Checklist",
+    nav_checklist: "Pre-Trip Checklist",
     badge_safety: "Official Trail Safety Guide",
     hero_title: "RIVER TRAIL GUIDE",
     hero_subtitle: "Panduan Susur Sungai",
@@ -371,17 +371,22 @@ function updateItemVisual(index, isChecked) {
 
   if (box && icon && label) {
     if (isChecked) {
-      box.style.backgroundColor = '#797D62'; // Dusty Olive
-      box.style.borderColor = '#797D62';
+      // Kotak centang jadi hijau alam/forest yang tegas
+      box.style.backgroundColor = '#1B4332';
+      box.style.borderColor = '#1B4332';
       box.style.transform = 'scale(1.08)';
       icon.style.opacity = '1';
-      label.style.borderColor = '#9B9B7A'; // Palm Leaf
-      label.style.backgroundColor = 'rgba(241, 220, 167, 0.2)'; // Soft Peach tint
+
+      // Background kartu: hijau mint sangat lembut (bukan kuning/peach lagi)
+      label.style.borderColor = '#94C6AF';
+      label.style.backgroundColor = '#F2F8F5';
     } else {
+      // Keadaan default saat belum dicentang
       box.style.backgroundColor = '#ffffff';
       box.style.borderColor = '#d6d3d1';
       box.style.transform = 'scale(1)';
       icon.style.opacity = '0';
+
       label.style.borderColor = '#e7e5e4';
       label.style.backgroundColor = '#ffffff';
     }
