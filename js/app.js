@@ -90,13 +90,14 @@ const i18nData = {
     congrats_sub: "Semua persiapan dasar telah dipenuhi. Saatnya bertualang!",
 
     // BAGIAN CLOSING & FOOTER (Diperbaiki & Diselaraskan)
-    closing_badge: "EKSPEDISI KEBUN PAMAN",
-    closing_quote: "Selamat Berpetualang di Kebun Paman",
-    closing_sub: "Simpan barang berharga dengan aman, jaga langkah di setiap pijakan, dan selamat menikmati keasrian alam Kebun Paman.",
-    btn_back_top: "Kembali ke Atas",
-    btn_check_again: "Cek Ulang Kesiapan",
-    footer_brand: "KEBUN PAMAN • RIVER TRAIL GUIDE",
-    footer_tagline: "Nikmati alam dengan bijak dan jaga kelestarian lingkungan bersama.",
+    // Di dalam id: { ... }
+closing_badge: "EKSPEDISI KEBUN PAMAN",
+closing_quote: "Siap Menjelajah?",
+closing_sub: "Persiapkan diri, ikuti pemandu, dan nikmati perjalanannya.",
+btn_back_top: "Kembali ke Atas",
+btn_check_again: "Cek Ulang Kesiapan",
+footer_brand: "KEBUN PAMAN • RIVER TRAIL GUIDE",
+footer_tagline: "Nikmati alam dengan bijak dan jaga kelestarian lingkungan bersama.",
     sticky_title: "Checklist Kesiapan",
     sticky_done: "Semua siap! Saatnya berpetualang!"
   },
@@ -190,13 +191,14 @@ const i18nData = {
     congrats_sub: "All basic preparations are complete. Time to explore!",
 
     // BAGIAN CLOSING & FOOTER (Diperbaiki & Diselaraskan)
-    closing_badge: "KEBUN PAMAN EXPEDITION",
-    closing_quote: "Enjoy Your Adventure at Kebun Paman",
-    closing_sub: "Keep your valuables safe, watch your footing along the trail, and enjoy the pristine nature of Kebun Paman.",
-    btn_back_top: "Back to Top",
-    btn_check_again: "Review Readiness Now",
-    footer_brand: "KEBUN PAMAN • RIVER TRAIL GUIDE",
-    footer_tagline: "Enjoy nature responsibly and help preserve the environment.",
+    // Di dalam en: { ... }
+closing_badge: "KEBUN PAMAN EXPEDITION",
+closing_quote: "Ready to Explore?",
+closing_sub: "Prepare well, follow your guide, and enjoy the journey.",
+btn_back_top: "Back to Top",
+btn_check_again: "Review Readiness Now",
+footer_brand: "KEBUN PAMAN • RIVER TRAIL GUIDE",
+footer_tagline: "Enjoy nature responsibly and help preserve the environment.",
     sticky_title: "Preparation Checklist",
     sticky_done: "Fully prepared! Let the adventure begin!"
   }
