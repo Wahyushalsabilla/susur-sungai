@@ -93,7 +93,7 @@ const i18nData = {
     closing_sub: "Pastikan perangkat pribadi aman dari cipratan air. Selamat bertualang!",
     btn_check_again: "Cek Kesiapan Sekarang",
     sticky_title: "Checklist Kesiapan",
-    sticky_done: "Semua siap! Siap jalan 🌿"
+    sticky_done: "Semua siap! Saatnya berpetualang!"
   },
   en: {
     nav_checklist: "Readiness Checklist",
@@ -171,7 +171,7 @@ const i18nData = {
     sec5_rule: "<strong>Take your rubbish with you</strong> and do not leave belongings or waste along the trail or river area.",
 
     // SECTION 06 — CHECKLIST
-    sec6_tag: "06 — Checklist Before Departure",
+    sec6_tag: "Checklist Before Starting",
     sec6_title: "Are you ready?",
     sec6_sub: "Check every item on your device before the group departs:",
     btn_reset: "Reset",
@@ -187,8 +187,8 @@ const i18nData = {
     closing_quote: "Ready to explore? Prepare well, follow your guide, and enjoy the journey.",
     closing_sub: "Keep your mobile devices safely stowed from water splashes.",
     btn_check_again: "Review Readiness Now",
-    sticky_title: "Departure Checklist",
-    sticky_done: "All set! Ready to trek 🌿"
+    sticky_title: "Preparation Checklist",
+    sticky_done: "Fully prepared! Let the adventure begin!"
   }
 };
 
