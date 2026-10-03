@@ -75,7 +75,7 @@ const i18nData = {
     sec5_desc: "Bantu menjaga pengalaman tetap nyaman bagi semua.",
     sec5_rule: "<strong>Bawa kembali sampahmu</strong> dan jangan meninggalkan barang di sepanjang jalur maupun area sungai.",
 
-    // SECTION 06 (Tetap sama)
+    // SECTION 06 — CHECKLIST
     sec6_tag: "06 — Checklist Sebelum Berangkat",
     sec6_title: "Sudah siap?",
     sec6_sub: "Centang setiap item langsung di perangkatmu sebelum tim memulai perjalanan:",
@@ -162,7 +162,7 @@ const i18nData = {
     sec4_rule4_p: "Stay with your group throughout the river walk.",
     sec4_rule5: "<strong>Avoid actions</strong> that may put yourself or others at risk.",
     sec4_crit_label: "ABSOLUTE SAFETY RULE",
-    sec4_critical: "‼️ Do not carry out activities beyond the guide’s instructions ‼️",
+    sec4_critical: "‼️ Do not carry out activities beyond the guide’s instructions ‼️️",
 
     // SECTION 05 — ENVIRONMENTAL ETHICS
     sec5_tag: "ENVIRONMENTAL ETHICS",
@@ -170,7 +170,7 @@ const i18nData = {
     sec5_desc: "Help keep the area comfortable for everyone.",
     sec5_rule: "<strong>Take your rubbish with you</strong> and do not leave belongings or waste along the trail or river area.",
 
-    // SECTION 06 (Tetap sama)
+    // SECTION 06 — CHECKLIST
     sec6_tag: "06 — Checklist Before Departure",
     sec6_title: "Are you ready?",
     sec6_sub: "Check every item on your device before the group departs:",
@@ -195,7 +195,9 @@ const i18nData = {
 let currentLang = 'id';
 const totalItems = 6;
 
-/* Slideshow Engine */
+/* ==========================================================
+   Slideshow Engine
+   ========================================================== */
 let currentSlide = 0;
 let slideTimer = null;
 const slideDuration = 4500;
@@ -265,7 +267,9 @@ function restartSlideTimer() {
   startSlideTimer();
 }
 
-/* Scroll-Reveal & Reading Bar */
+/* ==========================================================
+   Scroll-Reveal & Reading Bar
+   ========================================================== */
 function initScrollReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -289,7 +293,9 @@ function initScrollReveal() {
   }, { passive: true });
 }
 
-/* Audio & Checklist Logic */
+/* ==========================================================
+   Audio & Feedback
+   ========================================================== */
 function playClickTone(isSuccess = false) {
   try {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -321,6 +327,9 @@ function playClickTone(isSuccess = false) {
   } catch (e) {}
 }
 
+/* ==========================================================
+   Multi-language Switcher
+   ========================================================== */
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('trail_guide_lang', lang);
@@ -347,7 +356,36 @@ function setLanguage(lang) {
 
   updateProgressUI(false);
   updateSlideUI();
-  lucide.createIcons();
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+}
+
+/* ==========================================================
+   Interactive Checklist Engine
+   ========================================================== */
+function updateItemVisual(index, isChecked) {
+  const box = document.getElementById(`box-check-${index}`);
+  const icon = document.getElementById(`icon-check-${index}`);
+  const label = document.getElementById(`label-check-${index}`);
+
+  if (box && icon && label) {
+    if (isChecked) {
+      box.style.backgroundColor = '#797D62'; // Dusty Olive
+      box.style.borderColor = '#797D62';
+      box.style.transform = 'scale(1.08)';
+      icon.style.opacity = '1';
+      label.style.borderColor = '#9B9B7A'; // Palm Leaf
+      label.style.backgroundColor = 'rgba(241, 220, 167, 0.2)'; // Soft Peach tint
+    } else {
+      box.style.backgroundColor = '#ffffff';
+      box.style.borderColor = '#d6d3d1';
+      box.style.transform = 'scale(1)';
+      icon.style.opacity = '0';
+      label.style.borderColor = '#e7e5e4';
+      label.style.backgroundColor = '#ffffff';
+    }
+  }
 }
 
 function getCheckedCount() {
@@ -363,11 +401,12 @@ function handleCheckItem(index) {
   const el = document.getElementById(`check-${index}`);
   if (el) {
     localStorage.setItem(`trail_item_${index}`, el.checked ? 'true' : 'false');
+    updateItemVisual(index, el.checked);
   }
-  
+
   const count = getCheckedCount();
   const isComplete = count === totalItems;
-  
+
   playClickTone(isComplete);
   if (navigator.vibrate) {
     navigator.vibrate(isComplete ? [60, 40, 60] : 30);
@@ -382,6 +421,7 @@ function resetChecklist() {
     if (el) {
       el.checked = false;
       localStorage.removeItem(`trail_item_${i}`);
+      updateItemVisual(i, false);
     }
   }
   updateProgressUI(false);
@@ -393,7 +433,7 @@ function triggerConfetti() {
       particleCount: 70,
       spread: 75,
       origin: { y: 0.6 },
-      colors: ['#2D6A4F', '#10B981', '#06B6D4', '#F59E0B']
+      colors: ['#797D62', '#9B9B7A', '#D08C60', '#FFCB69']
     });
   }
 }
@@ -401,14 +441,14 @@ function triggerConfetti() {
 function updateProgressUI(allowCelebration = false) {
   const count = getCheckedCount();
   const percent = Math.round((count / totalItems) * 100);
-  
+
   const bar = document.getElementById('checklist-progress');
   if (bar) bar.style.width = `${percent}%`;
 
   const countEl = document.getElementById('checklist-count');
   if (countEl) {
-    countEl.textContent = currentLang === 'id' 
-      ? `${count}/${totalItems} Siap` 
+    countEl.textContent = currentLang === 'id'
+      ? `${count}/${totalItems} Siap`
       : `${count}/${totalItems} Ready`;
   }
 
@@ -434,16 +474,21 @@ function updateProgressUI(allowCelebration = false) {
       stickyText.textContent = i18nData[currentLang].sticky_done;
       stickyIconBox.className = "w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0";
     } else {
-      stickyText.textContent = currentLang === 'id' 
-        ? `${count} dari ${totalItems} tercentang` 
+      stickyText.textContent = currentLang === 'id'
+        ? `${count} dari ${totalItems} tercentang`
         : `${count} of ${totalItems} completed`;
       stickyIconBox.className = "w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 animate-pulse";
     }
   }
 }
 
+/* ==========================================================
+   Inisialisasi Keseluruhan Aplikasi
+   ========================================================== */
 function initApp() {
-  lucide.createIcons();
+  if (window.lucide) {
+    lucide.createIcons();
+  }
   startSlideTimer();
   initScrollReveal();
 
@@ -464,19 +509,25 @@ function initApp() {
     heroSlideshowEl.addEventListener('mouseleave', startSlideTimer);
   }
 
+  // Restore checklist dari localStorage
   for (let i = 1; i <= totalItems; i++) {
     const saved = localStorage.getItem(`trail_item_${i}`);
     const el = document.getElementById(`check-${i}`);
-    if (el && saved === 'true') {
-      el.checked = true;
+    const isChecked = saved === 'true';
+    if (el) {
+      el.checked = isChecked;
     }
+    updateItemVisual(i, isChecked);
   }
 
   const savedLang = localStorage.getItem('trail_guide_lang') || 'id';
   setLanguage(savedLang);
 }
 
-// Daftarkan fungsi ke objek window global agar inline event (onchange/onclick) selalu terbaca
+/* ==========================================================
+   Pendaftaran Global ke Objek Window
+   (Wajib untuk kompatibilitas Netlify / Fetch Component)
+   ========================================================== */
 window.handleCheckItem = handleCheckItem;
 window.resetChecklist = resetChecklist;
 window.triggerConfetti = triggerConfetti;

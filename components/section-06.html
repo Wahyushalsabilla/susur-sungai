@@ -29,11 +29,11 @@
 
   <!-- Responsive Grid for 6 Checklist Items -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5" id="checklist-container">
-    
-    <!-- Item 1: Footwear -->
+
+    <!-- Item 1 -->
     <div class="relative group">
-      <input type="checkbox" id="check-1" class="checkbox-input sr-only" onchange="handleCheckItem(1)">
-      <label for="check-1" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+      <input type="checkbox" id="check-1" class="sr-only" onchange="handleCheckItem(1)">
+      <label for="check-1" id="label-check-1" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
         <div class="flex items-center gap-3.5">
           <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-100">
             <i data-lucide="footprints" class="w-5 h-5"></i>
@@ -42,16 +42,16 @@
             Menggunakan alas kaki yang nyaman dan tidak licin
           </span>
         </div>
-        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
-          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        <div id="box-check-1" class="w-6 h-6 rounded-lg border-2 border-stone-300 bg-white flex items-center justify-center shrink-0 text-white ml-2 transition-all">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3] opacity-0 transition-opacity" id="icon-check-1"></i>
         </div>
       </label>
     </div>
 
-    <!-- Item 2: Clothing -->
+    <!-- Item 2 -->
     <div class="relative group">
-      <input type="checkbox" id="check-2" class="checkbox-input sr-only" onchange="handleCheckItem(2)">
-      <label for="check-2" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+      <input type="checkbox" id="check-2" class="sr-only" onchange="handleCheckItem(2)">
+      <label for="check-2" id="label-check-2" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
         <div class="flex items-center gap-3.5">
           <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-100">
             <i data-lucide="shirt" class="w-5 h-5"></i>
@@ -60,16 +60,16 @@
             Menggunakan pakaian yang nyaman untuk aktivitas luar ruang
           </span>
         </div>
-        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
-          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        <div id="box-check-2" class="w-6 h-6 rounded-lg border-2 border-stone-300 bg-white flex items-center justify-center shrink-0 text-white ml-2 transition-all">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3] opacity-0 transition-opacity" id="icon-check-2"></i>
         </div>
       </label>
     </div>
 
-    <!-- Item 3: Drinking Water -->
+    <!-- Item 3 -->
     <div class="relative group">
-      <input type="checkbox" id="check-3" class="checkbox-input sr-only" onchange="handleCheckItem(3)">
-      <label for="check-3" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+      <input type="checkbox" id="check-3" class="sr-only" onchange="handleCheckItem(3)">
+      <label for="check-3" id="label-check-3" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
         <div class="flex items-center gap-3.5">
           <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 border border-sky-100">
             <i data-lucide="cup-soda" class="w-5 h-5"></i>
@@ -78,16 +78,16 @@
             Membawa air minum yang cukup
           </span>
         </div>
-        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
-          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        <div id="box-check-3" class="w-6 h-6 rounded-lg border-2 border-stone-300 bg-white flex items-center justify-center shrink-0 text-white ml-2 transition-all">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3] opacity-0 transition-opacity" id="icon-check-3"></i>
         </div>
       </label>
     </div>
 
-    <!-- Item 4: Essential Items -->
+    <!-- Item 4 -->
     <div class="relative group">
-      <input type="checkbox" id="check-4" class="checkbox-input sr-only" onchange="handleCheckItem(4)">
-      <label for="check-4" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+      <input type="checkbox" id="check-4" class="sr-only" onchange="handleCheckItem(4)">
+      <label for="check-4" id="label-check-4" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
         <div class="flex items-center gap-3.5">
           <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0 border border-amber-100">
             <i data-lucide="backpack" class="w-5 h-5"></i>
@@ -96,16 +96,16 @@
             Membawa barang seperlunya
           </span>
         </div>
-        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
-          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        <div id="box-check-4" class="w-6 h-6 rounded-lg border-2 border-stone-300 bg-white flex items-center justify-center shrink-0 text-white ml-2 transition-all">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3] opacity-0 transition-opacity" id="icon-check-4"></i>
         </div>
       </label>
     </div>
 
-    <!-- Item 5: Secure Belongings -->
+    <!-- Item 5 -->
     <div class="relative group">
-      <input type="checkbox" id="check-5" class="checkbox-input sr-only" onchange="handleCheckItem(5)">
-      <label for="check-5" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+      <input type="checkbox" id="check-5" class="sr-only" onchange="handleCheckItem(5)">
+      <label for="check-5" id="label-check-5" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
         <div class="flex items-center gap-3.5">
           <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center shrink-0 border border-indigo-100">
             <i data-lucide="shield-check" class="w-5 h-5"></i>
@@ -114,16 +114,16 @@
             Menyimpan barang pribadi dengan aman
           </span>
         </div>
-        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
-          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        <div id="box-check-5" class="w-6 h-6 rounded-lg border-2 border-stone-300 bg-white flex items-center justify-center shrink-0 text-white ml-2 transition-all">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3] opacity-0 transition-opacity" id="icon-check-5"></i>
         </div>
       </label>
     </div>
 
-    <!-- Item 6: Physical Readiness -->
+    <!-- Item 6 -->
     <div class="relative group">
-      <input type="checkbox" id="check-6" class="checkbox-input sr-only" onchange="handleCheckItem(6)">
-      <label for="check-6" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+      <input type="checkbox" id="check-6" class="sr-only" onchange="handleCheckItem(6)">
+      <label for="check-6" id="label-check-6" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
         <div class="flex items-center gap-3.5">
           <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center shrink-0 border border-rose-100">
             <i data-lucide="activity" class="w-5 h-5"></i>
@@ -132,8 +132,8 @@
             Memastikan kondisi tubuh siap melakukan perjalanan
           </span>
         </div>
-        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
-          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        <div id="box-check-6" class="w-6 h-6 rounded-lg border-2 border-stone-300 bg-white flex items-center justify-center shrink-0 text-white ml-2 transition-all">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3] opacity-0 transition-opacity" id="icon-check-6"></i>
         </div>
       </label>
     </div>
@@ -153,7 +153,7 @@
     </div>
     <button onclick="triggerConfetti()" class="px-3.5 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-400/40 rounded-xl transition-all text-xs font-bold flex items-center gap-1.5 shrink-0">
       <i data-lucide="sparkles" class="w-4 h-4"></i>
-      <span class="hidden sm:inline">Rayakan</span>
+      <span class="hidden sm:inline">Rayakanoooi</span>
     </button>
   </div>
 </section>
