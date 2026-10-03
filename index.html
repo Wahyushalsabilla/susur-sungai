@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Panduan Susur Sungai — River Trail Guide</title>
   
-  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Lucide Icons & Confetti Library -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -64,39 +61,28 @@
 </head>
 <body class="bg-topo text-stone-800 antialiased selection:bg-forest-200 selection:text-forest-900 pb-24 md:pb-16 font-sans">
 
-  <!-- Top Scroll Depth Progress Line -->
   <div id="scroll-indicator" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-emerald-400 via-teal-400 to-forest-500 z-[70] w-0 transition-[width] duration-75"></div>
 
-  <!-- Navbar Component -->
   <div data-include="components/navbar.html"></div>
 
-  <!-- Hero Component -->
   <div data-include="components/hero.html"></div>
 
-  <!-- MAIN CONTAINER (max-w-7xl) -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-10 lg:space-y-12">
-    <!-- Desktop Row 1: Section 01 & 02 -->
     <div data-include="components/row-01-02.html"></div>
 
-    <!-- Desktop Row 2: Section 03 & 05 -->
     <div data-include="components/row-03-05.html"></div>
 
-    <!-- Section 04: Saat Susur Sungai -->
     <div data-include="components/section-04.html"></div>
 
-    <!-- Section 06: Checklist Interaktif -->
     <div data-include="components/section-06.html"></div>
 
-    <!-- Closing CTA -->
     <div data-include="components/closing.html"></div>
   </main>
 
-  <!-- Mobile Sticky Bar -->
   <div data-include="components/mobile-bar.html"></div>
 
 <script src="js/app.js"></script>
 <script>
-  // Asynchronous Component Loader yang stabil
   async function loadComponent(el) {
     const file = el.getAttribute('data-include');
     if (!file) return;
@@ -120,7 +106,6 @@
     const elements = Array.from(document.querySelectorAll('[data-include]'));
     await Promise.all(elements.map(loadComponent));
 
-    // Beri jeda 1 tick frame agar seluruh DOM komponen terpasang sempurna
     requestAnimationFrame(() => {
       if (window.lucide) {
         lucide.createIcons();
