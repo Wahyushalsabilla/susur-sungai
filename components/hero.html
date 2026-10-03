@@ -96,18 +96,22 @@
         </div>
       </div>
 
-      <!-- Desktop Action Buttons -->
-      <div class="pt-3 flex items-center gap-3">
-        <a href="#trail-overview" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-forest-600 hover:from-emerald-400 hover:to-forest-500 text-forest-950 font-extrabold text-sm shadow-glow-emerald transition-all transform active:scale-95">
-          <i data-lucide="map" class="w-4 h-4"></i>
-          <span data-i18n="btn_hero_route">Mulai Pelajari Panduan</span>
+      <!-- Action Buttons (Responsive & Equal Width on Mobile) -->
+      <div class="pt-4 grid grid-cols-2 sm:flex sm:items-center gap-3 w-full sm:w-auto">
+        <!-- Button 1: Primary Action (Warm Forest Green) -->
+        <a href="#trail-overview" 
+           class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-[#2D5A43] hover:bg-[#234734] active:bg-[#1B3829] text-[#E8F1EC] font-bold text-xs sm:text-sm border border-[#437A5E]/40 shadow-sm transition-all duration-200 text-center select-none active:scale-[0.98]">
+          <i data-lucide="map" class="w-4 h-4 text-[#8FC4A6] shrink-0"></i>
+          <span data-i18n="btn_hero_route" class="truncate">Mulai Panduan</span>
         </a>
-        <a href="#checklist-section" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 backdrop-blur-md transition-all">
-          <i data-lucide="check-square" class="w-4 h-4 text-emerald-300"></i>
-          <span data-i18n="btn_hero_checklist">Checklist</span>
+
+        <!-- Button 2: Secondary Action (Matte Frosted Charcoal) -->
+        <a href="#checklist-section" 
+           class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-black/40 hover:bg-black/60 active:bg-black/75 text-stone-200 hover:text-white font-bold text-xs sm:text-sm border border-white/15 backdrop-blur-md transition-all duration-200 text-center select-none active:scale-[0.98]">
+          <i data-lucide="check-square" class="w-4 h-4 text-emerald-300 shrink-0"></i>
+          <span data-i18n="btn_hero_checklist" class="truncate">Checklist 06</span>
         </a>
       </div>
-    </div>
 
     <!-- Slide Indicator Dots -->
     <div class="mt-8 flex items-center gap-2" id="slide-indicators">

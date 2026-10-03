@@ -96,7 +96,7 @@ const i18nData = {
     sticky_done: "Semua siap! Siap jalan 🌿"
   },
   en: {
-    nav_checklist: "Pre-Trip Checklist",
+    nav_checklist: "Readiness Checklist",
     badge_safety: "Official Trail Safety Guide",
     hero_title: "RIVER TRAIL GUIDE",
     hero_subtitle: "Panduan Susur Sungai",
@@ -162,7 +162,7 @@ const i18nData = {
     sec4_rule4_p: "Stay with your group throughout the river walk.",
     sec4_rule5: "<strong>Avoid actions</strong> that may put yourself or others at risk.",
     sec4_crit_label: "ABSOLUTE SAFETY RULE",
-    sec4_critical: "Do not carry out activities beyond the guide's instructions"
+    sec4_critical: "Do not carry out activities beyond the guide's instructions",
 
     // SECTION 05 — ENVIRONMENTAL ETHICS
     sec5_tag: "ENVIRONMENTAL ETHICS",
@@ -194,6 +194,7 @@ const i18nData = {
 
 let currentLang = 'id';
 const totalItems = 6;
+const checkStates = [false, false, false, false, false, false];
 
 /* ==========================================================
    Slideshow Engine
@@ -362,52 +363,43 @@ function setLanguage(lang) {
 }
 
 /* ==========================================================
-   Interactive Checklist Engine
+   Interactive Checklist Engine (State Based)
    ========================================================== */
 function updateItemVisual(index, isChecked) {
   const box = document.getElementById(`box-check-${index}`);
   const icon = document.getElementById(`icon-check-${index}`);
-  const label = document.getElementById(`label-check-${index}`);
+  const card = document.getElementById(`card-check-${index}`);
 
-  if (box && icon && label) {
+  if (box && icon && card) {
     if (isChecked) {
-      // Kotak centang jadi hijau alam/forest yang tegas
       box.style.backgroundColor = '#1B4332';
       box.style.borderColor = '#1B4332';
       box.style.transform = 'scale(1.08)';
       icon.style.opacity = '1';
-
-      // Background kartu: hijau mint sangat lembut (bukan kuning/peach lagi)
-      label.style.borderColor = '#94C6AF';
-      label.style.backgroundColor = '#F2F8F5';
+      card.style.borderColor = '#94C6AF';
+      card.style.backgroundColor = '#F2F8F5'; // Latar mint lembut natural
     } else {
-      // Keadaan default saat belum dicentang
       box.style.backgroundColor = '#ffffff';
       box.style.borderColor = '#d6d3d1';
       box.style.transform = 'scale(1)';
       icon.style.opacity = '0';
-
-      label.style.borderColor = '#e7e5e4';
-      label.style.backgroundColor = '#ffffff';
+      card.style.borderColor = '#e7e5e4';
+      card.style.backgroundColor = '#ffffff';
     }
   }
 }
 
 function getCheckedCount() {
-  let count = 0;
-  for (let i = 1; i <= totalItems; i++) {
-    const el = document.getElementById(`check-${i}`);
-    if (el && el.checked) count++;
-  }
-  return count;
+  return checkStates.filter(Boolean).length;
 }
 
-function handleCheckItem(index) {
-  const el = document.getElementById(`check-${index}`);
-  if (el) {
-    localStorage.setItem(`trail_item_${index}`, el.checked ? 'true' : 'false');
-    updateItemVisual(index, el.checked);
-  }
+function toggleCheck(index) {
+  const arrayIdx = index - 1;
+  checkStates[arrayIdx] = !checkStates[arrayIdx];
+  const newState = checkStates[arrayIdx];
+
+  localStorage.setItem(`trail_item_${index}`, newState ? 'true' : 'false');
+  updateItemVisual(index, newState);
 
   const count = getCheckedCount();
   const isComplete = count === totalItems;
@@ -422,12 +414,9 @@ function handleCheckItem(index) {
 
 function resetChecklist() {
   for (let i = 1; i <= totalItems; i++) {
-    const el = document.getElementById(`check-${i}`);
-    if (el) {
-      el.checked = false;
-      localStorage.removeItem(`trail_item_${i}`);
-      updateItemVisual(i, false);
-    }
+    checkStates[i - 1] = false;
+    localStorage.removeItem(`trail_item_${i}`);
+    updateItemVisual(i, false);
   }
   updateProgressUI(false);
 }
@@ -438,7 +427,7 @@ function triggerConfetti() {
       particleCount: 70,
       spread: 75,
       origin: { y: 0.6 },
-      colors: ['#797D62', '#9B9B7A', '#D08C60', '#FFCB69']
+      colors: ['#2D6A4F', '#10B981', '#06B6D4', '#F59E0B']
     });
   }
 }
@@ -514,16 +503,14 @@ function initApp() {
     heroSlideshowEl.addEventListener('mouseleave', startSlideTimer);
   }
 
-  // Restore checklist dari localStorage
+  // Restore checklist dari localStorage saat web pertama dibuka
   for (let i = 1; i <= totalItems; i++) {
     const saved = localStorage.getItem(`trail_item_${i}`);
-    const el = document.getElementById(`check-${i}`);
     const isChecked = saved === 'true';
-    if (el) {
-      el.checked = isChecked;
-    }
+    checkStates[i - 1] = isChecked;
     updateItemVisual(i, isChecked);
   }
+  updateProgressUI(false);
 
   const savedLang = localStorage.getItem('trail_guide_lang') || 'id';
   setLanguage(savedLang);
@@ -533,7 +520,8 @@ function initApp() {
    Pendaftaran Global ke Objek Window
    (Wajib untuk kompatibilitas Netlify / Fetch Component)
    ========================================================== */
-window.handleCheckItem = handleCheckItem;
+window.toggleCheck = toggleCheck;
+window.handleCheckItem = toggleCheck; // alias untuk menjaga kompatibilitas pemanggilan lama
 window.resetChecklist = resetChecklist;
 window.triggerConfetti = triggerConfetti;
 window.setLanguage = setLanguage;
