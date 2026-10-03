@@ -87,7 +87,7 @@ const i18nData = {
     check_item_5: "Menyimpan barang pribadi dengan aman",
     check_item_6: "Memastikan kondisi tubuh siap melakukan perjalanan",
     congrats_title: "Luar biasa! Kamu sudah siap.",
-    congrats_sub: "Semua persiapan dasar telah dipenuhi. Saatnya bertualang!",
+    congrats_sub: "Semua persiapan dasar telah dipenuhi. Saatnya berpetualang!",
 
     // BAGIAN CLOSING & FOOTER (Diperbaiki & Diselaraskan)
     // Di dalam id: { ... }
