@@ -87,7 +87,7 @@ const i18nData = {
     check_item_5: "Menyimpan barang pribadi dengan aman",
     check_item_6: "Memastikan kondisi tubuh siap melakukan perjalanan",
     congrats_title: "Luar biasa! Kamu sudah siap.",
-    congrats_sub: "Semua perlengkapan & kondisi siap berangkat.",
+    congrats_sub: "Semua Siap! Saatnya Berpetualang!",
 
     closing_quote: "Siap menjelajah? Persiapkan diri, ikuti pemandu, dan nikmati perjalanannya.",
     closing_sub: "Pastikan perangkat pribadi aman dari cipratan air. Selamat bertualang!",
@@ -182,7 +182,7 @@ const i18nData = {
     check_item_5: "Keep your belongings secure",
     check_item_6: "Make sure you are physically ready for the journey",
     congrats_title: "Outstanding! You are ready to go.",
-    congrats_sub: "All gear & readiness conditions completed.",
+    congrats_sub: "Fully Prepared! Let the Adventure Begin!.",
 
     closing_quote: "Ready to explore? Prepare well, follow your guide, and enjoy the journey.",
     closing_sub: "Keep your mobile devices safely stowed from water splashes.",
