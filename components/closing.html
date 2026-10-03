@@ -1,20 +1,56 @@
-<section class="text-center pt-4 pb-6 reveal-on-scroll">
-  <div class="bg-white p-8 sm:p-12 rounded-3xl border border-stone-200/90 shadow-nature max-w-4xl mx-auto space-y-4">
-    <div class="w-16 h-16 rounded-3xl bg-forest-50 border border-forest-100 text-forest-700 mx-auto flex items-center justify-center shadow-inner">
-      <i data-lucide="mountain" class="w-8 h-8 text-emerald-600"></i>
-    </div>
-    <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-stone-900 leading-snug" data-i18n="closing_quote">
-      Siap menjelajah? Persiapkan diri, ikuti pemandu, dan nikmati perjalanannya.
-    </h3>
-    <p class="text-xs sm:text-sm text-stone-500 max-w-lg mx-auto" data-i18n="closing_sub">
-      Pastikan perangkat pribadi aman dari cipratan air. Selamat bertualang!
-    </p>
-    <div class="pt-3">
-      <a href="#checklist-section" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-forest-700 hover:bg-forest-600 text-white text-sm font-extrabold transition-all shadow-md active:scale-95">
-        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-300"></i>
-        <span data-i18n="btn_check_again">Cek Kesiapan Sekarang</span>
-      </a>
+<!-- CLOSING BANNER & FOOTER SECTION -->
+<div class="mt-16 sm:mt-24 space-y-12">
+
+  <!-- 1. Farewell / Departure Card (Kartu Hutan Hangat) -->
+  <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F4524] via-[#144326] to-[#0a3119] text-white p-8 sm:p-12 border border-[#246C4C]/40 shadow-nature text-center">
+    <!-- Aksen Lingkaran Halus Latar Belakang -->
+    <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-[#246C4C]/20 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-[#A2C4AB]/10 blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+      <!-- Badge Ikon -->
+      <div class="w-14 h-14 rounded-2xl bg-white/10 border border-[#A2C4AB]/30 text-[#A2C4AB] flex items-center justify-center mb-6 shadow-inner">
+        <i data-lucide="mountain-snow" class="w-7 h-7"></i>
+      </div>
+
+      <!-- Heading -->
+      <h3 class="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight mb-3">
+        Selamat Berpetualang di Kebun Paman
+      </h3>
+
+      <!-- Deskripsi Penutup -->
+      <p class="text-sm sm:text-base text-stone-300 leading-relaxed mb-8 max-w-xl">
+        Pastikan barang bawaan aman dari cipratan air, perhatikan langkah di setiap pijakan, dan nikmati keasrian alam bersama rombongan.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+        <a href="#hero-slideshow" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-[#246C4C] hover:bg-[#1c573d] active:scale-95 text-white font-bold text-sm shadow-md transition-all">
+          <i data-lucide="arrow-up" class="w-4 h-4 text-[#A2C4AB]"></i>
+          <span>Kembali ke Atas</span>
+        </a>
+        <a href="#checklist-section" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-stone-200 hover:text-white font-bold text-sm border border-white/15 backdrop-blur-md transition-all">
+          <i data-lucide="check-square" class="w-4 h-4 text-[#A2C4AB]"></i>
+          <span>Cek Ulang Kesiapan</span>
+        </a>
+      </div>
     </div>
   </div>
-  <p class="text-xs text-stone-400 mt-8 font-medium">Panduan Susur Sungai</p>
-</section>
+
+  <!-- 2. Clean Minimalist Brand Footer -->
+  <footer class="pb-12 text-center select-none">
+    <div class="flex items-center justify-center gap-2 mb-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-[#246C4C]"></span>
+      <span class="text-xs font-black tracking-widest text-[#0F4524] uppercase">
+        KEBUN PAMAN • RIVER TRAIL GUIDE
+      </span>
+      <span class="w-1.5 h-1.5 rounded-full bg-[#246C4C]"></span>
+    </div>
+    <p class="text-xs text-stone-600 font-medium">
+      Nikmati alam dengan bijak dan jaga kelestarian lingkungan bersama.
+    </p>
+  </footer>
+
+</div>

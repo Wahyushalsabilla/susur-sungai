@@ -1,18 +1,32 @@
 <header class="fixed top-0 inset-x-0 z-50 transition-all duration-300 glass-nav bg-forest-950/70 border-b border-white/10 shadow-lg">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
-    
+
     <!-- Brand & Tagline -->
-    <a href="#" class="flex items-center gap-3 group">
-      <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-500 to-forest-700 text-white flex items-center justify-center shadow-glow-emerald ring-1 ring-white/20 transition-transform group-hover:scale-105">
-        <i data-lucide="waves" class="w-5 h-5 text-white"></i>
-      </div>
-      <div>
-        <div class="flex items-center gap-2">
-          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-[10px] tracking-widest font-black text-emerald-300 uppercase leading-none">TRAIL ADVENTURE</span>
-        </div>
-        <h1 class="text-sm sm:text-base font-extrabold text-white leading-tight">River Trail Guide</h1>
-      </div>
+    <a href="#" class="flex items-center gap-3 group select-none">
+      <!-- 1. Gambar Logo Bulat (Pondok & Hutan) -->
+      <img 
+        src="assets/images/logo-kebun-paman.png" 
+        alt="Logo Kebun Paman" 
+        class="w-10 h-10 rounded-full object-cover ring-2 ring-emerald-500/30 shadow-md transition-transform group-hover:scale-105 shrink-0"
+      />
+
+     <!-- Tagline Atas & Gambar Teks KEBUN PAMAN -->
+<div class="flex flex-col justify-center gap-1">
+  <!-- Tagline Atas -->
+  <div class="flex items-center gap-1.5 leading-none">
+    <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+    <span class="text-[9px] sm:text-[10px] tracking-widest font-black text-emerald-300 uppercase leading-none">
+      EMBRACE THE OUTDOORS
+    </span>
+  </div>
+
+  <!-- Gambar Teks KEBUN PAMAN -->
+  <img 
+    src="assets/images/text-kebun-paman.png" 
+    alt="KEBUN PAMAN" 
+    class="w-24 sm:w-28 h-auto object-contain brightness-150 contrast-125 pt-0.5"
+  />
+</div>
     </a>
 
     <!-- Quick Jump Link (Desktop) + Language Switcher -->
@@ -23,16 +37,30 @@
       </a>
 
       <!-- Bilingual Pill Toggle -->
-      <div class="bg-forest-900/80 p-1 rounded-full border border-white/20 flex items-center shadow-inner">
-        <button id="lang-btn-id" onclick="setLanguage('id')" class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 flex items-center gap-1.5 bg-emerald-500 text-forest-950 shadow-sm" aria-label="Bahasa Indonesia">
-          <span class="w-2.5 h-2.5 rounded-full bg-rose-600 ring-1 ring-white/40"></span>
-          <span>ID</span>
-        </button>
-        <button id="lang-btn-en" onclick="setLanguage('en')" class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 flex items-center gap-1.5 text-stone-300 hover:text-white" aria-label="English">
-          <span class="w-2.5 h-2.5 rounded-full bg-blue-500 ring-1 ring-white/40"></span>
-          <span>EN</span>
-        </button>
-      </div>
+      <div class="bg-[#0F4524]/90 backdrop-blur-md p-1 rounded-full border border-white/15 flex items-center shadow-inner relative z-50">
+  <!-- Tombol ID (Aktif) -->
+  <button 
+    id="lang-btn-id" 
+    type="button"
+    onclick="setLanguage('id')" 
+    class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 flex items-center gap-1.5 bg-[#246C4C] text-white shadow-sm cursor-pointer select-none" 
+    aria-label="Bahasa Indonesia">
+    <span class="w-2.5 h-2.5 rounded-full bg-rose-600 ring-1 ring-white/40"></span>
+    <span>ID</span>
+  </button>
+
+  <!-- Tombol EN (Tidak Aktif) -->
+  <button 
+    id="lang-btn-en" 
+    type="button"
+    onclick="setLanguage('en')" 
+    class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 flex items-center gap-1.5 text-stone-300 hover:text-white cursor-pointer select-none" 
+    aria-label="English">
+    <span class="w-2.5 h-2.5 rounded-full bg-sky-400 ring-1 ring-white/40"></span>
+    <span>EN</span>
+  </button>
+</div>
     </div>
+
   </div>
 </header>

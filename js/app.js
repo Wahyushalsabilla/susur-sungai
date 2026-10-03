@@ -10,7 +10,7 @@ const i18nData = {
     pill_guide: "Wajib Bersama Pemandu",
     pill_safe: "Jalur Alam Terbuka",
     btn_hero_route: "Mulai Pelajari Panduan",
-    btn_hero_checklist: "Checklist 06",
+    btn_hero_checklist: "Checklist",
 
     slide_badge_1: "Aliran Air Bebatuan",
     slide_badge_2: "Kanopi Hutan Alami",
@@ -67,7 +67,7 @@ const i18nData = {
     sec4_rule4_p: "Tetap berada bersama rombongan selama di air.",
     sec4_rule5: "<strong>Hindari tindakan</strong> yang dapat membahayakan diri sendiri maupun orang lain.",
     sec4_crit_label: "PERATURAN MUTLAK KESELAMATAN",
-    sec4_critical: "Jangan melakukan aktivitas di luar arahan pemandu",
+    sec4_critical: "Selalu ikuti arahan pemandu dan jangan melakukan tindakan yang membahayakan diri sendiri maupun orang lain.",
 
     // SECTION 05 — ETIKA LINGKUNGAN
     sec5_tag: "ETIKA LINGKUNGAN",
@@ -105,7 +105,7 @@ const i18nData = {
     pill_guide: "Guided Tour Only",
     pill_safe: "Open Nature Trail",
     btn_hero_route: "Explore Guide",
-    btn_hero_checklist: "Checklist 06",
+    btn_hero_checklist: "Checklist",
 
     slide_badge_1: "Rocky River Stream",
     slide_badge_2: "Natural Forest Canopy",
@@ -162,7 +162,7 @@ const i18nData = {
     sec4_rule4_p: "Stay with your group throughout the river walk.",
     sec4_rule5: "<strong>Avoid actions</strong> that may put yourself or others at risk.",
     sec4_crit_label: "ABSOLUTE SAFETY RULE",
-    sec4_critical: "Do not carry out activities beyond the guide's instructions",
+    sec4_critical: "Always follow the guide's instructions and avoid any actions that could endanger yourself or others.",
 
     // SECTION 05 — ENVIRONMENTAL ETHICS
     sec5_tag: "ENVIRONMENTAL ETHICS",
