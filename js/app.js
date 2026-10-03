@@ -475,3 +475,13 @@ function initApp() {
   const savedLang = localStorage.getItem('trail_guide_lang') || 'id';
   setLanguage(savedLang);
 }
+
+// Daftarkan fungsi ke objek window global agar inline event (onchange/onclick) selalu terbaca
+window.handleCheckItem = handleCheckItem;
+window.resetChecklist = resetChecklist;
+window.triggerConfetti = triggerConfetti;
+window.setLanguage = setLanguage;
+window.nextSlide = nextSlide;
+window.prevSlide = prevSlide;
+window.goToSlide = goToSlide;
+window.initApp = initApp;

@@ -94,30 +94,42 @@
   <!-- Mobile Sticky Bar -->
   <div data-include="components/mobile-bar.html"></div>
 
-  <script src="js/app.js"></script>
-  <script>
-    // Asynchronous Component Loader
-    async function loadComponent(el) {
-      const file = el.getAttribute('data-include');
-      if (file) {
-        try {
-          const resp = await fetch(file);
-          if (resp.ok) {
-            el.outerHTML = await resp.text();
-          }
-        } catch (e) {
-          console.error(`Gagal memuat ${file}`, e);
-        }
+<script src="js/app.js"></script>
+<script>
+  // Asynchronous Component Loader yang stabil
+  async function loadComponent(el) {
+    const file = el.getAttribute('data-include');
+    if (!file) return;
+    try {
+      const resp = await fetch(file);
+      if (resp.ok) {
+        const html = await resp.text();
+        const template = document.createElement('div');
+        template.innerHTML = html.trim();
+        const newEl = template.firstElementChild || template;
+        el.replaceWith(newEl);
+      } else {
+        console.error(`Gagal memuat ${file}: status ${resp.status}`);
       }
+    } catch (e) {
+      console.error(`Gagal memuat ${file}`, e);
     }
+  }
 
-    document.addEventListener("DOMContentLoaded", async () => {
-      const elements = Array.from(document.querySelectorAll('[data-include]'));
-      await Promise.all(elements.map(loadComponent));
-      
-      // Inisialisasi seluruh interaksi setelah semua komponen terpasang di DOM
-      initApp();
+  document.addEventListener("DOMContentLoaded", async () => {
+    const elements = Array.from(document.querySelectorAll('[data-include]'));
+    await Promise.all(elements.map(loadComponent));
+
+    // Beri jeda 1 tick frame agar seluruh DOM komponen terpasang sempurna
+    requestAnimationFrame(() => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+      if (typeof initApp === 'function') {
+        initApp();
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
