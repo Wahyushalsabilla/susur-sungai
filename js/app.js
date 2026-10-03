@@ -87,11 +87,16 @@ const i18nData = {
     check_item_5: "Menyimpan barang pribadi dengan aman",
     check_item_6: "Memastikan kondisi tubuh siap melakukan perjalanan",
     congrats_title: "Luar biasa! Kamu sudah siap.",
-    congrats_sub: "Semua Siap! Saatnya Berpetualang!",
+    congrats_sub: "Semua persiapan dasar telah dipenuhi. Saatnya bertualang!",
 
-    closing_quote: "Siap menjelajah? Persiapkan diri, ikuti pemandu, dan nikmati perjalanannya.",
-    closing_sub: "Pastikan perangkat pribadi aman dari cipratan air. Selamat bertualang!",
-    btn_check_again: "Cek Kesiapan Sekarang",
+    // BAGIAN CLOSING & FOOTER (Diperbaiki & Diselaraskan)
+    closing_badge: "EKSPEDISI KEBUN PAMAN",
+    closing_quote: "Selamat Berpetualang di Kebun Paman",
+    closing_sub: "Simpan barang berharga dengan aman, jaga langkah di setiap pijakan, dan selamat menikmati keasrian alam Kebun Paman.",
+    btn_back_top: "Kembali ke Atas",
+    btn_check_again: "Cek Ulang Kesiapan",
+    footer_brand: "KEBUN PAMAN • RIVER TRAIL GUIDE",
+    footer_tagline: "Nikmati alam dengan bijak dan jaga kelestarian lingkungan bersama.",
     sticky_title: "Checklist Kesiapan",
     sticky_done: "Semua siap! Saatnya berpetualang!"
   },
@@ -182,11 +187,16 @@ const i18nData = {
     check_item_5: "Keep your belongings secure",
     check_item_6: "Make sure you are physically ready for the journey",
     congrats_title: "Outstanding! You are ready to go.",
-    congrats_sub: "Fully Prepared! Let the Adventure Begin!.",
+    congrats_sub: "All basic preparations are complete. Time to explore!",
 
-    closing_quote: "Ready to explore? Prepare well, follow your guide, and enjoy the journey.",
-    closing_sub: "Keep your mobile devices safely stowed from water splashes.",
+    // BAGIAN CLOSING & FOOTER (Diperbaiki & Diselaraskan)
+    closing_badge: "KEBUN PAMAN EXPEDITION",
+    closing_quote: "Enjoy Your Adventure at Kebun Paman",
+    closing_sub: "Keep your valuables safe, watch your footing along the trail, and enjoy the pristine nature of Kebun Paman.",
+    btn_back_top: "Back to Top",
     btn_check_again: "Review Readiness Now",
+    footer_brand: "KEBUN PAMAN • RIVER TRAIL GUIDE",
+    footer_tagline: "Enjoy nature responsibly and help preserve the environment.",
     sticky_title: "Preparation Checklist",
     sticky_done: "Fully prepared! Let the adventure begin!"
   }
@@ -197,8 +207,8 @@ const totalItems = 6;
 const checkStates = [false, false, false, false, false, false];
 
 /* ==========================================================
-   Slideshow Engine
-   ========================================================== */
+Slideshow Engine
+========================================================== */
 let currentSlide = 0;
 let slideTimer = null;
 const slideDuration = 4500;
@@ -269,8 +279,8 @@ function restartSlideTimer() {
 }
 
 /* ==========================================================
-   Scroll-Reveal & Reading Bar
-   ========================================================== */
+Scroll-Reveal & Reading Bar
+========================================================== */
 function initScrollReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -295,8 +305,8 @@ function initScrollReveal() {
 }
 
 /* ==========================================================
-   Audio & Feedback
-   ========================================================== */
+Audio & Feedback
+========================================================== */
 function playClickTone(isSuccess = false) {
   try {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -329,8 +339,8 @@ function playClickTone(isSuccess = false) {
 }
 
 /* ==========================================================
-   Multi-language Switcher
-   ========================================================== */
+Multi-language Switcher
+========================================================== */
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('trail_guide_lang', lang);
@@ -363,8 +373,8 @@ function setLanguage(lang) {
 }
 
 /* ==========================================================
-   Interactive Checklist Engine (State Based)
-   ========================================================== */
+Interactive Checklist Engine (State Based)
+========================================================== */
 function updateItemVisual(index, isChecked) {
   const box = document.getElementById(`box-check-${index}`);
   const icon = document.getElementById(`icon-check-${index}`);
@@ -477,8 +487,8 @@ function updateProgressUI(allowCelebration = false) {
 }
 
 /* ==========================================================
-   Inisialisasi Keseluruhan Aplikasi
-   ========================================================== */
+Inisialisasi Keseluruhan Aplikasi
+========================================================== */
 function initApp() {
   if (window.lucide) {
     lucide.createIcons();
@@ -517,11 +527,10 @@ function initApp() {
 }
 
 /* ==========================================================
-   Pendaftaran Global ke Objek Window
-   (Wajib untuk kompatibilitas Netlify / Fetch Component)
-   ========================================================== */
+Pendaftaran Global ke Objek Window
+========================================================== */
 window.toggleCheck = toggleCheck;
-window.handleCheckItem = toggleCheck; // alias untuk menjaga kompatibilitas pemanggilan lama
+window.handleCheckItem = toggleCheck;
 window.resetChecklist = resetChecklist;
 window.triggerConfetti = triggerConfetti;
 window.setLanguage = setLanguage;
