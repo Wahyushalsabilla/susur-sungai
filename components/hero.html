@@ -1,0 +1,140 @@
+<section class="relative w-full min-h-[85vh] lg:min-h-[92vh] flex items-end overflow-hidden bg-forest-950 text-white select-none">
+  
+  <!-- Slideshow Background Layers -->
+  <div id="hero-slideshow" class="absolute inset-0 w-full h-full">
+    
+    <!-- Slide 1: Aliran Air & Air Terjun Susur Sungai -->
+    <div class="slide-item active absolute inset-0 w-full h-full">
+      <img 
+        src="/assets/images/sungai-1.png"
+        alt="Susur Sungai Alami" 
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+    </div>
+
+    <!-- Slide 2: Kanopi Hutan Tropis Rimba -->
+    <div class="slide-item absolute inset-0 w-full h-full">
+      <img 
+        src="/assets/images/sungai-2.png" 
+        alt="Kawasan Hutan Hijau" 
+        class="w-full h-full object-cover object-center"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Slide 3: Bebatuan Air Terjun Berarus Jernih -->
+    <div class="slide-item absolute inset-0 w-full h-full">
+      <img 
+        src="/assets/images/sungai-3.png" 
+        alt="Bebatuan Sungai Alami" 
+        class="w-full h-full object-cover object-center"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Slide 4: Jalur Perkebunan & Trekking Hijau -->
+    <div class="slide-item absolute inset-0 w-full h-full">
+      <img 
+        src="/assets/images/sungai-4.png" 
+        alt="Jalur Perkebunan dan Petualangan" 
+        class="w-full h-full object-cover object-center"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Multi-stop Dark Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/70 to-black/40 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-radial-gradient from-transparent via-forest-950/30 to-forest-950/80 pointer-events-none"></div>
+  </div>
+
+  <!-- Slideshow Control Pill (Top Right) -->
+  <div class="absolute top-24 right-4 sm:right-8 lg:right-12 z-20 flex items-center gap-2">
+    <div class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/45 border border-white/20 text-emerald-300 text-xs font-bold backdrop-blur-md shadow-md">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span id="slide-caption-badge" data-i18n="slide_badge_1">Aliran Air Bebatuan</span>
+    </div>
+
+    <div class="flex items-center gap-1.5 bg-black/45 backdrop-blur-md border border-white/20 p-1 rounded-full shadow-md">
+      <button onclick="prevSlide()" aria-label="Previous slide" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-all active:scale-90">
+        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+      </button>
+      <span id="slide-counter-badge" class="px-2 text-stone-200 text-xs font-extrabold tracking-widest">
+        01 / 04
+      </span>
+      <button onclick="nextSlide()" aria-label="Next slide" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-all active:scale-90">
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero Content Overlay -->
+  <div class="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 pt-32">
+    <div class="max-w-3xl space-y-4">
+      
+      <!-- Safety Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-extrabold backdrop-blur-md">
+        <i data-lucide="shield-check" class="w-4 h-4"></i>
+        <span data-i18n="badge_safety">Panduan Resmi & Keamanan Jalur</span>
+      </div>
+
+      <!-- Main Title & Subtitle -->
+      <div>
+        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1]" data-i18n="hero_title">
+          PANDUAN SUSUR SUNGAI
+        </h2>
+        <p class="text-emerald-300 font-bold text-lg sm:text-2xl mt-1 tracking-wide" data-i18n="hero_subtitle">
+          RIVER TRAIL GUIDE
+        </p>
+      </div>
+
+      <p class="text-stone-200 text-base sm:text-lg lg:text-xl font-normal max-w-2xl leading-relaxed" data-i18n="hero_description">
+        Sebelum berangkat, kenali perjalanan dan persiapkan dirimu.
+      </p>
+
+      <!-- Quick Highlight Badges -->
+      <div class="pt-2 flex flex-wrap gap-2.5 text-xs sm:text-sm font-semibold text-emerald-100">
+        <div class="flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/15 shadow-sm">
+          <div class="w-6 h-6 rounded-lg bg-emerald-400/20 flex items-center justify-center">
+            <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-300"></i>
+          </div>
+          <span data-i18n="pill_time">±2 Jam Pulang-Pergi</span>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/15 shadow-sm">
+          <div class="w-6 h-6 rounded-lg bg-emerald-400/20 flex items-center justify-center">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-emerald-300"></i>
+          </div>
+          <span data-i18n="pill_guide">Wajib Bersama Pemandu</span>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/15 shadow-sm">
+          <div class="w-6 h-6 rounded-lg bg-emerald-400/20 flex items-center justify-center">
+            <i data-lucide="footprints" class="w-3.5 h-3.5 text-emerald-300"></i>
+          </div>
+          <span data-i18n="pill_safe">Jalur Alam Terbuka</span>
+        </div>
+      </div>
+
+      <!-- Desktop Action Buttons -->
+      <div class="pt-3 flex items-center gap-3">
+        <a href="#trail-overview" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-forest-600 hover:from-emerald-400 hover:to-forest-500 text-forest-950 font-extrabold text-sm shadow-glow-emerald transition-all transform active:scale-95">
+          <i data-lucide="map" class="w-4 h-4"></i>
+          <span data-i18n="btn_hero_route">Mulai Pelajari Panduan</span>
+        </a>
+        <a href="#checklist-section" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 backdrop-blur-md transition-all">
+          <i data-lucide="check-square" class="w-4 h-4 text-emerald-300"></i>
+          <span data-i18n="btn_hero_checklist">Checklist 06</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide Indicator Dots -->
+    <div class="mt-8 flex items-center gap-2" id="slide-indicators">
+      <button onclick="goToSlide(0)" class="h-2 rounded-full transition-all duration-300 bg-emerald-400 w-8" aria-label="Slide 1"></button>
+      <button onclick="goToSlide(1)" class="h-2 rounded-full transition-all duration-300 bg-white/40 w-3 hover:bg-white/70" aria-label="Slide 2"></button>
+      <button onclick="goToSlide(2)" class="h-2 rounded-full transition-all duration-300 bg-white/40 w-3 hover:bg-white/70" aria-label="Slide 3"></button>
+      <button onclick="goToSlide(3)" class="h-2 rounded-full transition-all duration-300 bg-white/40 w-3 hover:bg-white/70" aria-label="Slide 4"></button>
+    </div>
+  </div>
+</section>

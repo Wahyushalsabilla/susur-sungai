@@ -1,0 +1,159 @@
+<section id="checklist-section" class="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-emerald-200 shadow-nature hover:shadow-nature-hover relative overflow-hidden transition-all reveal-on-scroll">
+  <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-forest-600 via-emerald-500 to-teal-400"></div>
+
+  <div class="flex items-center justify-between mb-3">
+    <span class="inline-flex items-center gap-1.5 text-xs font-extrabold tracking-wider text-forest-700 bg-forest-50 px-3.5 py-1.5 rounded-xl border border-forest-200 uppercase" data-i18n="sec6_tag">
+      Checklist Sebelum Berangkat
+    </span>
+    <button onclick="resetChecklist()" class="text-xs font-bold text-stone-400 hover:text-rose-600 transition-colors flex items-center gap-1 px-3 py-1.5 rounded-xl hover:bg-rose-50" title="Reset Checklist">
+      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+      <span data-i18n="btn_reset">Reset</span>
+    </button>
+  </div>
+
+  <div class="flex items-baseline justify-between mb-1.5">
+    <h3 class="text-xl sm:text-3xl font-extrabold text-stone-900" data-i18n="sec6_title">Sudah siap?</h3>
+    <span id="checklist-count" class="text-xs sm:text-sm font-extrabold text-forest-800 bg-forest-100 px-3.5 py-1 rounded-full border border-forest-200">
+      0/6 Siap
+    </span>
+  </div>
+
+  <p class="text-xs sm:text-sm text-stone-500 mb-4" data-i18n="sec6_sub">
+    Centang setiap item langsung di perangkatmu sebelum tim memulai perjalanan:
+  </p>
+
+  <!-- Progress Bar -->
+  <div class="w-full bg-stone-100 h-3 rounded-full overflow-hidden mb-6 p-0.5 border border-stone-200">
+    <div id="checklist-progress" class="bg-gradient-to-r from-forest-600 to-emerald-400 h-full rounded-full transition-all duration-300 w-0"></div>
+  </div>
+
+  <!-- Responsive Grid for 6 Checklist Items -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5" id="checklist-container">
+    
+    <!-- Item 1: Footwear -->
+    <div class="relative group">
+      <input type="checkbox" id="check-1" class="checkbox-input sr-only" onchange="handleCheckItem(1)">
+      <label for="check-1" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-100">
+            <i data-lucide="footprints" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-semibold text-stone-800 leading-snug group-hover:text-forest-900" data-i18n="check_item_1">
+            Menggunakan alas kaki yang nyaman dan tidak licin
+          </span>
+        </div>
+        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        </div>
+      </label>
+    </div>
+
+    <!-- Item 2: Clothing -->
+    <div class="relative group">
+      <input type="checkbox" id="check-2" class="checkbox-input sr-only" onchange="handleCheckItem(2)">
+      <label for="check-2" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-100">
+            <i data-lucide="shirt" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-semibold text-stone-800 leading-snug group-hover:text-forest-900" data-i18n="check_item_2">
+            Menggunakan pakaian yang nyaman untuk aktivitas luar ruang
+          </span>
+        </div>
+        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        </div>
+      </label>
+    </div>
+
+    <!-- Item 3: Drinking Water -->
+    <div class="relative group">
+      <input type="checkbox" id="check-3" class="checkbox-input sr-only" onchange="handleCheckItem(3)">
+      <label for="check-3" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 border border-sky-100">
+            <i data-lucide="cup-soda" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-semibold text-stone-800 leading-snug group-hover:text-forest-900" data-i18n="check_item_3">
+            Membawa air minum yang cukup
+          </span>
+        </div>
+        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        </div>
+      </label>
+    </div>
+
+    <!-- Item 4: Essential Items -->
+    <div class="relative group">
+      <input type="checkbox" id="check-4" class="checkbox-input sr-only" onchange="handleCheckItem(4)">
+      <label for="check-4" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0 border border-amber-100">
+            <i data-lucide="backpack" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-semibold text-stone-800 leading-snug group-hover:text-forest-900" data-i18n="check_item_4">
+            Membawa barang seperlunya
+          </span>
+        </div>
+        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        </div>
+      </label>
+    </div>
+
+    <!-- Item 5: Secure Belongings -->
+    <div class="relative group">
+      <input type="checkbox" id="check-5" class="checkbox-input sr-only" onchange="handleCheckItem(5)">
+      <label for="check-5" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center shrink-0 border border-indigo-100">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-semibold text-stone-800 leading-snug group-hover:text-forest-900" data-i18n="check_item_5">
+            Menyimpan barang pribadi dengan aman
+          </span>
+        </div>
+        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        </div>
+      </label>
+    </div>
+
+    <!-- Item 6: Physical Readiness -->
+    <div class="relative group">
+      <input type="checkbox" id="check-6" class="checkbox-input sr-only" onchange="handleCheckItem(6)">
+      <label for="check-6" class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 transition-all cursor-pointer select-none shadow-sm h-full">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center shrink-0 border border-rose-100">
+            <i data-lucide="activity" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-semibold text-stone-800 leading-snug group-hover:text-forest-900" data-i18n="check_item_6">
+            Memastikan kondisi tubuh siap melakukan perjalanan
+          </span>
+        </div>
+        <div class="checkbox-box w-6 h-6 rounded-lg border-2 border-stone-300 flex items-center justify-center shrink-0 text-white ml-2">
+          <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+        </div>
+      </label>
+    </div>
+
+  </div>
+
+  <!-- Completion Banner -->
+  <div id="ready-congrats" class="hidden mt-6 p-4 rounded-2xl bg-gradient-to-r from-forest-800 via-forest-900 to-forest-950 text-white flex items-center justify-between shadow-nature border border-emerald-500/30">
+    <div class="flex items-center gap-3.5">
+      <div class="w-10 h-10 rounded-xl bg-emerald-400 text-forest-950 flex items-center justify-center shrink-0 shadow-glow-emerald">
+        <i data-lucide="party-popper" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <p class="font-bold text-sm text-white" data-i18n="congrats_title">Luar biasa! Kamu sudah siap.</p>
+        <p class="text-xs text-emerald-200" data-i18n="congrats_sub">Semua perlengkapan & kondisi siap berangkat.</p>
+      </div>
+    </div>
+    <button onclick="triggerConfetti()" class="px-3.5 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-400/40 rounded-xl transition-all text-xs font-bold flex items-center gap-1.5 shrink-0">
+      <i data-lucide="sparkles" class="w-4 h-4"></i>
+      <span class="hidden sm:inline">Rayakan</span>
+    </button>
+  </div>
+</section>
