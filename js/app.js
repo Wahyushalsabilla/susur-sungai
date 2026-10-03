@@ -67,7 +67,7 @@ const i18nData = {
     sec4_rule4_p: "Tetap berada bersama rombongan selama di air.",
     sec4_rule5: "<strong>Hindari tindakan</strong> yang dapat membahayakan diri sendiri maupun orang lain.",
     sec4_crit_label: "PERATURAN MUTLAK KESELAMATAN",
-    sec4_critical: "‼️ Jangan melakukan aktivitas di luar arahan pemandu ‼️",
+    sec4_critical: "Jangan melakukan aktivitas di luar arahan pemandu",
 
     // SECTION 05 — ETIKA LINGKUNGAN
     sec5_tag: "ETIKA LINGKUNGAN",
@@ -162,7 +162,7 @@ const i18nData = {
     sec4_rule4_p: "Stay with your group throughout the river walk.",
     sec4_rule5: "<strong>Avoid actions</strong> that may put yourself or others at risk.",
     sec4_crit_label: "ABSOLUTE SAFETY RULE",
-    sec4_critical: "‼️ Do not carry out activities beyond the guide’s instructions ‼️️",
+    sec4_critical: "Do not carry out activities beyond the guide's instructions"
 
     // SECTION 05 — ENVIRONMENTAL ETHICS
     sec5_tag: "ENVIRONMENTAL ETHICS",
